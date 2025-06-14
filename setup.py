@@ -6,9 +6,9 @@ with open("OSS_VERSION", "rt") as f:
     mf_version = f.read()
 
 setup(
-    name="mycompany-metaflow",
+    name="mlops-club-metaflow",
     version=version,
-    description="Metaflow Custom Extensions",
+    description="Metaflow Custom Extensions with OpenLineage",
     author="Your team name",
     author_email="team@company.com",
     packages=find_packages(),
@@ -19,7 +19,7 @@ setup(
         # CONFIGURE: You can list any additional requirements for your
         # extensions here
         # Preferred: Pin a version of metaflow here.
-        "metaflow=%s"
-        % mf_version
+        "metaflow==%s" % mf_version,
+        "openlineage-python",
     ],
 )

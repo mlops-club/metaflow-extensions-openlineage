@@ -1,2 +1,7 @@
 *.pyc
 .vscode
+*env
+*egg-info
+*.metaflow
+*cache*
+*DS_Store
