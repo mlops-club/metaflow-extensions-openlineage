@@ -39,5 +39,5 @@ OPENLINEAGE__TRANSPORT__TYPE=http \
 OPENLINEAGE__TRANSPORT__URL=http://localhost:9000 \
 OPENLINEAGE__TRANSPORT__ENDPOINT=/api/v1/lineage \
 OPENLINEAGE__TRANSPORT__COMPRESSION=gzip \
-    uv run ./examples/lineage_flow.py
+    uv run ./examples/lineage_flow.py run
 ```
