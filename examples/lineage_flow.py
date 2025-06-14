@@ -1,15 +1,5 @@
-# /// script
-# requires-python = "==3.11.*"
-# dependencies = [
-#     "mlops-club-metaflow",
-#     "setuptools"
-# ]
-#
-# [tool.uv.sources]
-# mlops-club-metaflow = { path = "..", editable = true }
-# ///
-
 from metaflow import FlowSpec, step
+from openlineage_metaflow import openlineage, execute_sql
 
 # Job: LineageFlow
 #    Job: LineageFlow.start
@@ -17,11 +7,16 @@ from metaflow import FlowSpec, step
 
 class LineageFlow(FlowSpec):
 
+    @openlineage
     @step
     def start(self):
         print("Starting the flow...")
+
+        execute_sql("SELECT * FROM my_table", "snowflake")
+
         self.next(self.end)
 
+    @openlineage
     @step
     def end(self):
         print("Flow completed.")

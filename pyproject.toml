@@ -1,0 +1,15 @@
+[project]
+name = "metaflow-extensions-openlineage"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "openlineage-metaflow",
+    "openlineage-sql>=1.33.0",
+    "setuptools>=80.9.0",
+    "sqlglot>=26.28.1",
+]
+
+[tool.uv.sources]
+openlineage-metaflow = { path = "openlineage-metaflow", editable = true }
